@@ -1,0 +1,9 @@
+name: eks-cluster
+runtime: nodejs
+description: Provision an Amazon EKS Cluster
+template:
+  config:
+    aws:region:
+      default: "eu-west-1"
+    aws:profile:
+      default: "personal"

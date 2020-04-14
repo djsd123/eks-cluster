@@ -1,2 +1,3 @@
-# eks-cluster
-Provision an Amazon EKS Cluster
+# EKS-Cluster
+
+#### Provision an Amazon EKS Cluster
