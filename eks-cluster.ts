@@ -1,7 +1,7 @@
 import * as pulumi from '@pulumi/pulumi'
 import * as awsx from '@pulumi/awsx'
 import * as eks from '@pulumi/eks'
-import { InstanceTypes } from "@pulumi/aws/ec2";
+import { InstanceTypes } from '@pulumi/aws/ec2';
 
 export class NewEksCluster extends pulumi.ComponentResource {
     public kubeconfig: pulumi.Output<any>
@@ -31,11 +31,16 @@ export class NewEksCluster extends pulumi.ComponentResource {
             desiredCapacity: config.desiredCapacity,
             minSize: config.minCapacity,
             maxSize: config.maxCapacity,
-            storageClasses: "gp2",
+            storageClasses: 'gp2',
             deployDashboard: config.dashboard
         })
 
         this.kubeconfig = eksCluster.kubeconfig
+
+        /*
+        pulumi stack output kubeconfig > kubeconfig.json
+        export KUBECONFIG=$PWD/kubeconfig.json
+         */
     }
 
 }
